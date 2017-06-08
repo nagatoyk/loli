@@ -9,7 +9,7 @@ if [ ! -d ${OPENSHIFT_DATA_DIR}attachment ]; then
     mkdir ${OPENSHIFT_DATA_DIR}attachment
 fi
 
-ln - sf ${OPENSHIFT_DATA_DIR}attachment ${OPENSHIFT_REPO_DIR}
+ln - sv ${OPENSHIFT_DATA_DIR}attachment ${OPENSHIFT_REPO_DIR}
 
 # cp -fv ${OPENSHIFT_REPO_DIR}config.inc.php ${OPENSHIFT_REPO_DIR}blog/config.inc.php
 
