@@ -11,8 +11,7 @@ class Common extends Controller
     {
         parent::__construct($request);
         $this->assign('cate', model('Category')->where('des','<>','')->order('id','asc')->select());
-        $url = 'http://hitoapi.cc/s/?_='.time();
-        $json = json_decode(file_get_contents($url), true);
+        $json = json_decode(file_get_contents('http://hitoapi.cc/s/?_='.time()), true);
         $this->assign('hito', $json);
     }
 }
