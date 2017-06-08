@@ -1,0 +1,70 @@
+{extend name='base'/}
+{block name='content'}
+<ol class="breadcrumb">
+    <li>
+        <a href="{:url('admin/index/index')}"><i class="fa fa-fw fa-cogs"></i>后台首页</a>
+    </li>
+    <li>
+        <a href="{:url('index')}">友链管理</a>
+    </li>
+    <li class="active">
+        <a href="">友链展示</a>
+    </li>
+</ol>
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="{:url('index')}">友链列表</a></li>
+    <li><a href="{:url('store')}">添加友链</a></li>
+</ul>
+
+<style>
+    .table th, .table td {
+        /*text-align: center;*/
+        vertical-align: middle!important
+    }
+</style>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td width="80">
+                        图标
+                    </td>
+                    <td>
+                        <p>链接名称</p>
+                    </td>
+                    <td width="200">操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                {volist name='link' id='l'}
+                <tr>
+                    <td>
+                        <img src="{if condition='$l.icon'}{$l.icon}{else/}__STATIC__/design/link.svg{/if}" class="img-responsive">
+                    </td>
+                    <td>
+                        <h4><a href="{$l.url}" target="_blank">{$l.title}</a></h4>
+                        <p>{$l.des}</p>
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <button data-toggle="dropdown" class="btn btn-primary btn-x">操作<span class="caret"></span></button>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li>
+                                    <a href="{:url('edit', ['id'=>$l.id])}">修改</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="{:url('del', ['id'=>$l.id])}">删除</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                {/volist}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="pagination pagination-sm pull-right">
+    {$page}
+</div>
+{/block}

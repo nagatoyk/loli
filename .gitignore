@@ -2,5 +2,5 @@
 composer.lock
 *.log
 thinkphp
-runtime
 attachment
+runtime

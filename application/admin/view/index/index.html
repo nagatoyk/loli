@@ -1,0 +1,85 @@
+{extend name='base'/}
+{block name='content'}
+<ol class="breadcrumb">
+	<li>
+		<a href="{:url('admin/index/index')}"><i class="fa fa-fw fa-cogs"></i>后台首页</a>
+	</li>
+	<li class="active">
+		<a href="">最新展示</a>
+	</li>
+</ol>
+<div class="col-sm-3">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">最新文章</h3>
+		</div>
+		<div class="panel-body">
+			<table class="table table-responsive table-striped table-hover">
+				{volist name='art' id='a'}
+				<tr>
+					<td>
+						<a href="{:url('admin/article/edit', ['pid'=>$a.pid])}">
+							<i class="fa fa-fw fa-sticky-note-o"></i>
+							{$a.title}
+							{if condition="date('d', $a.created) eq date('d', time())"}
+							<span class="label label-default pull-right">新</span>
+							{/if}
+						</a>
+					</td>
+				</tr>
+				{/volist}
+			</table>
+		</div>
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">最新评论</h3>
+		</div>
+		<div class="panel-body">
+			<table class="table table-hover">
+				<tr>
+					<td>
+						<i class="fa fa-fw fa-commenting-o"></i>123132
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">最新注册</h3>
+		</div>
+		<div class="panel-body">
+			<table class="table table-hover">
+				{volist name='user' id='u'}
+				<tr>
+					<td>
+						<i class="fa fa-fw fa-user-circle-o"></i>{$u.nickname}
+					</td>
+				</tr>
+				{/volist}
+			</table>
+		</div>
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">最新访客</h3>
+		</div>
+		<div class="panel-body">
+			<table class="table table-hover">
+				<tr>
+					<td>
+						<i class="fa fa-fw fa-user-circle-o"></i>123132
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+{/block}
