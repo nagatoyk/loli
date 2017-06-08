@@ -1,7 +1,7 @@
 <?php
 
 namespace app\Index\controller;
-use app\Index\controller\Common;
+
 class Link extends Common
 {
     public function index()
