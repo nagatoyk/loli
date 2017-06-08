@@ -1,6 +1,6 @@
 <?php
 
-namespace app\admin\controller;
+namespace app\Admin\controller;
 
 class Index extends Common
 {
