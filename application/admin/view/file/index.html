@@ -1,6 +1,0 @@
-{extend name='base'/}
-{block name='content'}
-{volist name='file' id='f'}
-<img src="{$f.path}" style="width: 200px;height: auto;cursor: pointer" onclick="window.open(this.src,'_image');return false">
-{/volist}
-{/block}
