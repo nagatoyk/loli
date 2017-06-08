@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.adobe.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy>
+	<site-control permitted-cross-domain-policies="by-content-type"/>
+    <!websetsite-control permitted-cross-domain-policies="master-only"/> -->
+    <allow-access-from domain="*.kloli.tk"/>
+    <allow-access-from domain="*-yukimax.rhcloud.com"/>
+</cross-domain-policy>

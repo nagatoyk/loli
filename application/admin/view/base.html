@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>后台首页</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{if condition="request()->controller() eq 'Article' && (request()->action() eq 'store' || request()->action() eq 'edit')"}
+<link rel="stylesheet" href="__STATIC__/editor/css/editormd.css">
+<script src="__STATIC__/editor/editormd.min.js"></script>
+<script>
+    $(function(){
+        var Editor = editormd("editormd",{
+            width: "96%",
+            height: 440,
+            markdown: "",
+            path: '__STATIC__/editor/lib/',
+//			theme: 'dark',
+//			previewTheme: 'dark',
+//			editorTheme: 'pastel-on-dark',
+            codeFold: true,
+            imageUpload: true,
+            imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL: "{:url('admin/file/upload')}",
+			onload: function(){
+                console.log('onload', this)
+            }
+        });
+    });
+</script>
+{/if}
+<style>
+	i{color:#337ab7}
+</style>
+<div class="container-fluid admin-top">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{:url('admin/index/index')}">后台管理</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">后台首页<span class="sr-only">(current)</span></a></li>
+					<li>
+						<a href="/phpmyadmin" target="_blank">数据库管理</a>
+					</li>
+					<li>
+						<a href="/" target="_blank">首页</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							帮助
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="//www.kancloud.cn/manual/thinkphp5/118003" target="_blank">在线文档</a>
+							</li>
+							<li>
+								<a href="//fontawesome.dashgame.com" target="_blank">图标库</a>
+							</li>
+							<li>
+								<a href="//www.houdunren.com/houdunren18_101_8928.html" target="_blank">视频教程</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="//bns.gamebbs.qq.com/forum.php?mod=forumdisplay&fid=30929" target="_blank">剑灵南天国官方论坛</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-default">搜索</button>
+				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Link</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-fw fa-user-o"></i>
+							{:session('admin.nickname')}
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="{:url('admin/index/pass')}">修改密码</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">退出</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+</div>
+<div class="container-fluid admin-menu">
+	<div class="row">
+		<div class="col-xs-12 col-sm-3 col-lg-2 panel-group" id="accordion">
+			<!-- 文章管理 start -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a class="panel-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">
+							<i class="fa fa-fw fa-chevron-circle-down"></i>
+							文章管理
+						</a>
+					</h4>
+				</div>
+				<div id="collapse1" class="panel-collapse collapse{if condition="request()->controller() eq 'Index' || request()->controller() eq 'Article'"} in{/if}">
+					<a href="{:url('admin/article/index')}" class="list-group-item">
+						<i class="fa fa-fw fa-list-ol"></i>
+						文章列表
+					</a>
+					<a href="{:url('admin/article/store')}" class="list-group-item">
+						<i class="fa fa-fw fa-sticky-note"></i>
+						添加文章
+					</a>
+				</div>
+			</div>
+			<!-- 文章管理 end -->
+			<!-- 分类管理 start -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a class="panel-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true">
+							<i class="fa fa-fw fa-chevron-circle-down"></i>
+							分类管理
+						</a>
+					</h4>
+				</div>
+				<div id="collapse2" class="panel-collapse collapse{if condition="request()->controller() eq 'Category'"} in{/if}">
+					<a href="{:url('admin/category/index')}" class="list-group-item">
+						<i class="fa fa-fw fa-list-ol"></i>
+						分类列表
+					</a>
+					<a href="{:url('admin/category/store')}" class="list-group-item">
+						<i class="fa fa-fw fa-sticky-note"></i>
+						添加分类
+					</a>
+				</div>
+			</div>
+			<!-- 分类管理 end -->
+			<!-- 文件管理 start -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a class="panel-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true">
+							<i class="fa fa-fw fa-chevron-circle-down"></i>
+							文件管理
+						</a>
+					</h4>
+				</div>
+				<div id="collapse3" class="panel-collapse collapse{if condition="request()->controller() eq 'File'"} in{/if}">
+					<a href="{:url('admin/file/index')}" class="list-group-item">
+						<i class="fa fa-fw fa-list-ol"></i>
+						文件列表
+					</a>
+					<a href="{:url('admin/file/store')}" class="list-group-item">
+						<i class="fa fa-fw fa-sticky-note"></i>
+						添加文件
+					</a>
+				</div>
+			</div>
+			<!-- 文件管理 end -->
+			<!-- 友链管理 start -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a class="panel-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true">
+							<i class="fa fa-fw fa-chevron-circle-down"></i>
+							友链管理
+						</a>
+					</h4>
+				</div>
+				<div id="collapse4" class="panel-collapse collapse{if condition="request()->controller() eq 'Link'"} in{/if}">
+					<a href="{:url('admin/link/index')}" class="list-group-item">
+						<i class="fa fa-fw fa-list-ol"></i>
+						友链列表
+					</a>
+					<a href="{:url('admin/link/store')}" class="list-group-item">
+						<i class="fa fa-fw fa-sticky-note"></i>
+						添加友链
+					</a>
+				</div>
+			</div>
+			<!-- 友链管理 end -->
+			<!-- 站点管理 start -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a class="panel-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true">
+							<i class="fa fa-fw fa-chevron-circle-down"></i>
+							站点管理
+						</a>
+					</h4>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse{if condition="request()->controller() eq 'Webset'"} in{/if}">
+					<a href="{:url('admin/webset/index')}" class="list-group-item">
+						<i class="fa fa-fw fa-list-ol"></i>
+						各项设置
+					</a>
+				</div>
+			</div>
+			<!-- 站点管理 end -->
+		</div>
+		<div class="col-xs-12 col-sm-9 col-lg-10">
+			{block name='content'}{/block}
+		</div>
+	</div>
+</div>
