@@ -2,9 +2,7 @@
 
 namespace app\common\model;
 
-use Michelf\Markdown;
 use think\Model;
-use think\Request;
 
 class Article extends Model
 {
@@ -34,7 +32,16 @@ class Article extends Model
     // 首页列表
     public function getAll($size)
     {
-        return $this->order('created','desc')->paginate($size, false, ['page'=>input('param.page',1,'intval')]);
+        $data = $this->order('created', 'desc')->paginate($size, false, ['page' => input('param.page', 1, 'intval')]);
+        if(request()->module() !== 'index'){
+            return $data;
+        }else{
+            foreach($data->items() as $k=>$v)
+            {
+                $data->items()[$k]->text = ($i = strpos($v->text,'<!--more-->') ) !== false ? substr($v->text, 0, $i+11).'<p class="more"><a href="'.url('index/article/index','pid='.$v->pid).'">- 查看更多 -</a></p>' : $v['text'];
+            }
+            return $data;
+        }
     }
     // 添加
     public function store($data)

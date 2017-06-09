@@ -212,7 +212,7 @@ article{
 	list-style-type:disc;
 	padding:1em 1em 1em 4em
 }
-.p-text .more{
+.markdown-body .more{
 	padding:0 0 2em;
 	text-align:center;
 	text-indent:0
