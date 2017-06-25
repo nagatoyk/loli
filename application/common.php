@@ -12,6 +12,10 @@
 // 应用公共文件
 function mdToHtml($data, $field)
 {
+    return \Michelf\Markdown::defaultTransform($data[$field]);
+}
+function mdToHtmlEx($data, $field)
+{
 
     return \Michelf\MarkdownExtra::defaultTransform($data[$field]);
 }

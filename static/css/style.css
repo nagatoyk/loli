@@ -1,11 +1,11 @@
 /*主要样式*/
-body,form,h1,h2,h3,h4,ol,p,#nav ul{
+body,form,h1,h2,h3,h4,ol,p,ul:not(div.markdown-body){
 	margin:0
 }
 body{
 	background:#f1f4f9
 }
-#nav ol,#nav ul{
+ol,ul:not(div.markdown-body){
 	padding:0
 }
 button,html,input,option,select,textarea{
@@ -69,7 +69,7 @@ html::-webkit-scrollbar-thumb:hover{
 	background:rgb(244,164,164);
 	color:#fff
 }
-#nav ul{
+ul:not(div.markdown-body){
 	list-style-type:none
 }
 a{
@@ -146,10 +146,10 @@ header p{
 	vertical-align:top;
 	margin:0 20px
 }
-#nav li a{
+li a{
 	display:block
 }
-#nav li a.a{
+li a.a{
 	color:rgb(244,164,164);
 	text-shadow:0 0 15px rgb(244,164,164);
 }
@@ -255,36 +255,18 @@ article{
 #more a:hover{
 	background:#EEE
 }
-#m .DS form p{
-	padding:5px 0
-}
 .text{
 	border:1px solid #FFF;
 	background:#EEE;
 	border-radius:.5em
 }
-#m .DS textarea,#m .text{
+#m .text{
 	padding:.3em .5em;
 	margin:0;
 	display:block
 }
-xmp{
-	display:none
-}
 a,input{
 	transition:.3s ease
-}
-.DS{
-	padding-top:3em
-}
-.DS-post{
-	margin:1em
-}
-.DS .DS-smile b{
-	padding:.3em 1.2em 1.5em
-}
-.DS .DS-smile.a b{
-	padding:.6em 1.2em .8em
 }
 .cover img,header img{
 	transition:opacity .3s ease
@@ -421,10 +403,6 @@ a,input{
 	}
 	.p-text p img{
 		max-width:720px
-	}
-	#m .DS{
-		width:660px;
-		font-size:1.4em
 	}
 	p{
 		-webkit-text-size-adjust:100%;

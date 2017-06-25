@@ -116,7 +116,7 @@
      "[def @font-face] {",
      "  [property font-family]: [string 'myfont'];",
      "  [error nonsense]: [string 'abc'];",
-     "  [property src]: [atom url]([string http://blah]),",
+     "  [property fm]: [atom url]([string http://blah]),",
      "    [atom url]([string http://foo]);",
      "}");
 

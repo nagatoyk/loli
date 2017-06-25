@@ -509,7 +509,7 @@ class Cx extends Taglib
             $type = strtolower(substr(strrchr($val, '.'), 1));
             switch ($type) {
                 case 'js':
-                    $parseStr .= '<script type="text/javascript" src="' . $val . '"></script>';
+                    $parseStr .= '<script type="text/javascript" fm="' . $val . '"></script>';
                     break;
                 case 'css':
                     $parseStr .= '<link rel="stylesheet" type="text/css" href="' . $val . '" />';

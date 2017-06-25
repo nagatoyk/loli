@@ -17,6 +17,10 @@ class ComposerStaticInit977ffc0c97cd325a85c04acd74506544
             'think\\captcha\\' => 14,
             'think\\' => 6,
         ),
+        'M' => 
+        array (
+            'Metowolf\\' => 9,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -31,6 +35,10 @@ class ComposerStaticInit977ffc0c97cd325a85c04acd74506544
         'think\\' => 
         array (
             0 => __DIR__ . '/../..' . '/thinkphp/library/think',
+        ),
+        'Metowolf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/metowolf/meting/src',
         ),
     );
 

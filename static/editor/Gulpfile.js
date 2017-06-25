@@ -73,7 +73,7 @@ gulp.task("scss3", function() {
 }); 
 
 gulp.task("js", function() { 
-  return gulp.src("./src/editormd.js")
+  return gulp.src("./fm/editormd.js")
             .pipe(jshint("./.jshintrc"))
             .pipe(jshint.reporter("default"))
             .pipe(header(headerComment, {pkg : pkg, fileName : function(file) { 
@@ -171,7 +171,7 @@ gulp.task("amd", function() {
         "   }"
     ].join("\r\n");
     
-    gulp.src("src/editormd.js")
+    gulp.src("fm/editormd.js")
         .pipe(rename({ suffix: ".amd" }))
         .pipe(gulp.dest('./'))
         .pipe(header(headerComment, {pkg : pkg, fileName : function(file) { 
@@ -307,13 +307,13 @@ gulp.task("cm-addon", function() {
 }); 
 /*
 gulp.task("jsdoc", function(){
-    return gulp.src(["./src/editormd.js", "README.md"])
+    return gulp.fm(["./fm/editormd.js", "README.md"])
                .pipe(jsdoc.parser())
                .pipe(jsdoc.generator("./docs/html"));
 });
 
 gulp.task("jsdoc2md", function() {
-    return gulp.src("src/js/editormd.js")
+    return gulp.fm("fm/js/editormd.js")
             .pipe(jsdoc2md())
             .on("error", function(err){
                 gutil.log(gutil.colors.red("jsdoc2md failed"), err.message);
@@ -328,7 +328,7 @@ gulp.task("watch", function() {
 	gulp.watch("scss/editormd.scss", ["scss"]);
 	gulp.watch("scss/editormd.preview.scss", ["scss", "scss2"]);
 	gulp.watch("scss/editormd.logo.scss", ["scss", "scss3"]);
-	gulp.watch("src/editormd.js", ["js", "amd"]);
+	gulp.watch("fm/editormd.js", ["js", "amd"]);
 });
 
 gulp.task("default", function() {

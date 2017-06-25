@@ -24,14 +24,14 @@
                         <time>{:date('Y-m-d H:i:s', $a.created)}</time>
                     </li>
                     <li>
-                        <a href="http://service.weibo.com/share/share.php?url={:urlencode(url('index/article/index', ['pid'=>$a.pid]))}&title={$a.title}&pic='+encodeURIComponent(o[i].cover?'http://ww2.sinaimg.cn/mw1024/'+o[i].cover:INF.url+o[i].pic)+'&ralateUid=1687199364&language=zh_cn&appkey=1093396876" target="_blank">分享到微博</a>
+                        <a href="http://service.weibo.com/share/share.php?url={:urlencode(url('index/article/index', ['pid'=>$a.pid]))}&title={$a.title}&pic={$a.cover?:'http://ww4.sinaimg.cn/large/64909e84jw1f9z5vrwrc3j20dc07ign4.jpg'}&ralateUid=1687199364&language=zh_cn&appkey=1093396876" target="_blank">分享到微博</a>
                     </li>
                 </ul>
                 {if condition='$a.cover'}
                     <div class="cover"><img src="{$a.cover}" class="h" onload="this.className=''"></div>
                 {/if}
             </a>
-            <div class="markdown-body">{$a|mdToHtml=###,'text'}</div>
+            <div class="markdown-body">{$a|mdToHtmlEx=###,'text'}</div>
         </article>
 {/volist}
 <div id="more">

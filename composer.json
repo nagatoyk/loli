@@ -18,12 +18,14 @@
     "require": {
         "php": ">=5.4.0",
         "topthink/framework": "^5.0",
-        "topthink/think-captcha": "^1.0"
+        "topthink/think-captcha": "^1.0",
+        "metowolf/meting": "^1.3"
     },
     "extra": {
         "think-path": "thinkphp"
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "disable-tls": true
     }
 }
