@@ -1,0 +1,16 @@
+{
+    "name": "nagatoyk/loli",
+    "description": "My Blog",
+    "type": "project",
+    "require": {
+        "houdunwang/hdphp": "*"
+    },
+    "license": "mit",
+    "authors": [
+        {
+            "name": "凉宫长门",
+            "email": "393117228@qq.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

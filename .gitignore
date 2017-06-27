@@ -4,3 +4,4 @@ composer.lock
 attachment
 wordpress
 template
+/vendor/
