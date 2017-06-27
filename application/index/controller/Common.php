@@ -10,7 +10,7 @@ class Common extends Controller
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
-        $list = glob('attachment/*');
+        $list = glob(getenv('OPENSHIFT_DATA_DIR').'/*');
         dump($list);
         $this->assign('cate', model('Category')->where('des','<>','')->order('id','asc')->select());
         $url = 'https://hitoapi.cc/s/?_='.time();
