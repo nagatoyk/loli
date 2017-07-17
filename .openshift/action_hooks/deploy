@@ -5,9 +5,9 @@
 # up again.  This script gets executed directly, so it could be python, php,
 # ruby, etc.
 
-if [ ${OPENSHIFT_DOCUMENT_ROOT} = "/"]; then
-    echo ${OPENSHIFT_DOCUMENT_ROOT}
-fi
+#if [ ${OPENSHIFT_DOCUMENT_ROOT} = "/"]; then
+    echo -e ${OPENSHIFT_DOCUMENT_ROOT}
+#fi
 
 if [ ! -d ${OPENSHIFT_DATA_DIR}attachment ]; then
     mkdir ${OPENSHIFT_DATA_DIR}attachment
