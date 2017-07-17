@@ -10,8 +10,13 @@
 // +----------------------------------------------------------------------
 
 // 应用公共文件
-function mdToHtml($data, $field, $type = 'art')
+function mdToHtml($data, $field, $type = 'art', $Url)
 {
-    $text = $type != 'art' ? (($i = strpos($data[$field], '<!--more-->')) !== false ? substr($data[$field], 0, $i + 11) : $data[$field]) : $data[$field];
+    if($type != 'art')
+    {
+        $text = ($i = strpos($data[$field], '<!--more-->')) !== false ? substr($data[$field], 0, $i + 11) . '<p class="more"><a href="' . $Url . '">- 查看更多 -</a></p>' : $data[$field];
+    }else{
+        $text = $data[$field];
+    }
     return \Michelf\MarkdownExtra::defaultTransform($text);
 }
