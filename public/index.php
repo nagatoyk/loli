@@ -9,9 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-$list = glob('../*');
-echo '<pre>'.print_r($list, true).'</pre>';
-die();
+//$list = glob('../*');
+//echo '<pre>'.print_r($list, true).'</pre>';
+//die();
 // [ 应用入口文件 ]
 // 定义应用目录
 define('APP_PATH', __DIR__ . '/../application/');
