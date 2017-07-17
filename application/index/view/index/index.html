@@ -31,7 +31,7 @@
                     <div class="cover"><img src="{$a.cover}" class="h" onload="this.className=''"></div>
                 {/if}
             </a>
-            <div class="markdown-body">{$a|mdToHtml=###,'text'}</div>
+            <div class="markdown-body">{$a|mdToHtml=###,'text','list'}</div>
         </article>
 {/volist}
 <div id="more">

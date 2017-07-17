@@ -10,8 +10,8 @@
 // +----------------------------------------------------------------------
 
 // 应用公共文件
-function mdToHtml($data, $field)
+function mdToHtml($data, $field, $type = 'art')
 {
-
-    return \Michelf\MarkdownExtra::defaultTransform($data[$field]);
+    $text = $type != 'art' ? (($i = strpos($data[$field], '<!--more-->')) !== false ? substr($data[$field], 0, $i + 11) : $data[$field]) : $data[$field];
+    return \Michelf\MarkdownExtra::defaultTransform($text);
 }
