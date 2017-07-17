@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  Options +FollowSymlinks -Multiviews
+  RewriteEngine On
+  RewriteBase /
+  #只许绑定的域名访问
+  RewriteCond %{HTTP_HOST} !^loli\.kloli\.tk$ [NC]
+  RewriteRule (.*) http://loli.kloli.tk/$1 [L,R=301]
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+</IfModule>

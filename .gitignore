@@ -1,7 +1,4 @@
 .idea
 composer.lock
 *.log
-attachment
-wordpress
-template
-/vendor/
+thinkphp
