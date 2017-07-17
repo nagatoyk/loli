@@ -10,3 +10,8 @@
 // +----------------------------------------------------------------------
 
 // 应用公共文件
+function mdToHtml($data, $field)
+{
+
+    return \Michelf\MarkdownExtra::defaultTransform($data[$field]);
+}
