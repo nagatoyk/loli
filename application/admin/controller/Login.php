@@ -19,6 +19,7 @@ class Login extends Controller
 				$this->error($res['msg']);
 			}
 		}
+		captcha_src();
 		return $this->fetch();
 	}
 }
