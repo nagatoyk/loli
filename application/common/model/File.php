@@ -13,7 +13,7 @@ class File extends Model
         $file = request()->file($field);
         if($file)
         {
-            $info = $file->move(ROOT_PATH.'attachment');
+            $info = $file->move(ROOT_PATH.'public/attachment');
             if($info)
             {
                 $path = '/attachment/' . $info->getSaveName();
