@@ -5,7 +5,7 @@
 # up again.  This script gets executed directly, so it could be python, php,
 # ruby, etc.
 
-if [ ${OPENSHIFT_DOCUMENT_ROOT} == "/"]; then
+if [ ${OPENSHIFT_DOCUMENT_ROOT} = "/"]; then
     echo ${OPENSHIFT_DOCUMENT_ROOT}
 fi
 
