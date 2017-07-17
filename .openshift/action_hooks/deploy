@@ -13,7 +13,7 @@ if [ -f ${OPENSHIFT_DATA_DIR}attachment/20170609/2327c85eb2892ee09c124580910f5b0
 	rm ${OPENSHIFT_DATA_DIR}attachment/20170609/2327c85eb2892ee09c124580910f5b04.jpg
 fi
 
-ln -sv ${OPENSHIFT_DATA_DIR}attachment ${OPENSHIFT_REPO_DIR}
+ln -sv ${OPENSHIFT_DATA_DIR}attachment ${OPENSHIFT_REPO_DIR}public
 
 # cp -fv ${OPENSHIFT_REPO_DIR}config.inc.php ${OPENSHIFT_REPO_DIR}blog/config.inc.php
 
