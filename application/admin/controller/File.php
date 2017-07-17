@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Admin\controller;
+namespace app\admin\controller;
 
 class File extends Common
 {
