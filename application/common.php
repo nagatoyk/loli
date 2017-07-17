@@ -10,9 +10,9 @@
 // +----------------------------------------------------------------------
 
 // 应用公共文件
-function mdToHtml($data, $field, $type = 'art', $Url)
+function mdToHtml($data, $field, $type = 'art', $Url = null)
 {
-    if($type != 'art')
+    if($type != 'art' && !is_null($Url))
     {
         $text = ($i = strpos($data[$field], '<!--more-->')) !== false ? substr($data[$field], 0, $i + 11) . '<p class="more"><a href="' . $Url . '">- 查看更多 -</a></p>' : $data[$field];
     }else{
