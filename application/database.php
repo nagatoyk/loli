@@ -17,7 +17,7 @@ return [
     // 数据库名
     'database'        => getenv('OPENSHIFT_APP_NAME') ? : '',
     // 用户名
-    'username'        => getenv('OPENSHIFT_APP_USERNAME') ? : 'root',
+    'username'        => getenv('OPENSHIFT_MYSQL_DB_USERNAME') ? : 'root',
     // 密码
     'password'        => getenv('OPENSHIFT_MYSQL_DB_PASSWORD') ? : '',
     // 端口
