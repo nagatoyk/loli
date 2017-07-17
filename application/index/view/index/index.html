@@ -15,7 +15,7 @@
 </form>
 {volist name='data' id='a' empty='<p class=\"banner\">没有内容惹！ :(</p>'}
 <article class="p">
-    <a href="{:url('index/article/index', 'pid='$a.pid)}">
+    <a href="{:url('index/article/index', ['pid'=>$a.pid])}">
                 <h2 class="p-title">{$a.title}</h2>
                 <ul class="p-meta">
                     <!--<li>{$a.cate.name}</li>-->
@@ -31,7 +31,7 @@
                     <div class="cover"><img src="{$a.cover}" class="h" onload="this.className=''"></div>
                 {/if}
             </a>
-            <div class="markdown-body">{$a|mdToHtml=###,'text','list',url('index/article/index', 'pid='$a.pid)}</div>
+            <div class="markdown-body">{$a|mdToHtml=###,'text','list',url('index/article/index', ['pid'=>$a.pid])}</div>
         </article>
 {/volist}
 <div id="more">
