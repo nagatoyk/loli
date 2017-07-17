@@ -15,9 +15,9 @@ class File extends Common
         $res = (new \app\common\model\File())->store('editormd-image-file');
         if($res['valid'])
         {
-            echo json_encode(['success'=>1, 'message'=>$res['msg'], 'url'=>$res['path']]);
+            return ['success'=>1, 'message'=>$res['msg'], 'url'=>$res['path']];
         }else{
-            echo json_encode(['success'=>0, 'message'=>$res['msg']]);
+            return ['success'=>0, 'message'=>$res['msg']];
         }
     }
 }
