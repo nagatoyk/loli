@@ -6,7 +6,7 @@
 # ruby, etc.
 
 #if [ ${OPENSHIFT_DOCUMENT_ROOT} = "/"]; then
-    echo -e ${OPENSHIFT_DOCUMENT_ROOT}
+    echo -ne ${OPENSHIFT_DOCUMENT_ROOT}
 #fi
 
 if [ ! -d ${OPENSHIFT_DATA_DIR}attachment ]; then
