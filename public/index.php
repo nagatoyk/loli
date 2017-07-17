@@ -9,8 +9,10 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+$list = glob('../*');
+echo '<pre>'.print_r($list, true).'</pre>';
+die();
 // [ 应用入口文件 ]
-error_reporting(E_ALL);
 // 定义应用目录
 define('APP_PATH', __DIR__ . '/../application/');
 // 加载框架引导文件
