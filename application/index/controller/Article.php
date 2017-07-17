@@ -1,8 +1,6 @@
 <?php
 
-namespace app\Index\controller;
-
-use Michelf\Markdown;
+namespace app\index\controller;
 
 class Article extends Common
 {
