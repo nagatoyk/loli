@@ -1,0 +1,68 @@
+{extend name='base'/}
+{block name='content'}
+<ul class="hp c">
+    <li>
+        <a href="{:url('/')}">
+            <img src="//ww3.sinaimg.cn/bmiddle/64909e84jw1esz30joqqrj20h40fijsk" alt="小熊'博客">
+            <h3>小熊'博客</h3>
+            <p>90後騷年。</p>
+            <span>//kloli.tk</span>
+        </a>
+    </li>
+    <li>
+        <a href="//weibo.com/n/凉宫长门" target="_blank" rel="external nofollow">
+            <img src="//tp4.sinaimg.cn/1687199364/180/0" alt="涼宮長門">
+            <h3>涼宮長門</h3>
+            <p>新浪微博</p>
+            <span>//weibo.com/n/凉宫长门</span>
+        </a>
+    </li>
+    <li>
+        <a href="https://lub-yukimax.rhcloud.com" target="_blank" rel="external nofollow">
+            <img src="__STATIC__/design/link.svg" alt="項目庫">
+            <h3>項目庫</h3>
+            <p>示例、實驗、未完成...</p>
+            <span>https://lub-yukimax.rhcloud.com</span>
+        </a>
+    </li>
+    <li class="hr"><h2>朋友們 ( *・ω・)✄</h2></li>
+    {volist name='data' id='l'}
+    <li>
+        <a href="{$l.url}" target="_blank" rel="external nofollow">
+            <img src="{if condition='$l.icon'}{$l.icon}{else/}__STATIC__/design/link.svg{/if}" alt="{$l.icon}">
+            <h3>{$l.title}</h3>
+            <p>{$l.des}</p>
+            <span>{$l.url}</span>
+        </a>
+    </li>
+    {/volist}
+    <li class="hr"><h2>圖站分享_(:зゝ∠)_</h2></li>
+    <li>
+        <a href="//oxgood.com" target="_blank">
+            <img src="//tp4.sinaimg.cn/2117061723/180/0" alt="萌图网">
+            <h3>萌图网</h3>
+            <p>一个独立二次元三次元萌图分享站。</p>
+            <span>//oxgood.com</span>
+        </a>
+    </li>
+    <li class="hr"><h2>工具</h2></li>
+    <li>
+        <a href="//www.chainwon.com" target="_blank" rel="external nofollow">
+            <img src="http://www.chainwon.com/logo.png" alt="轻惋导航">
+            <h3>轻惋导航</h3>
+            <p>永存的二次元</p>
+            <span>//www.chainwon.com</span>
+        </a>
+    </li>
+    <li class="hr"><h2>代碼託管</h2></li>
+    <li>
+        <a href="//www.openshift.com" target="_blank" rel="external nofollow">
+            <img src="//tp4.sinaimg.cn/2698345062/180/0" alt="OpenShift">
+            <h3>OpenShift</h3>
+            <p>OpenShift PaaS by Red Hat</p>
+            <span>//www.openshift.com</span>
+        </a>
+    </li>
+</ul>
+<div class="banner">异次元任意门</div>
+{/block}

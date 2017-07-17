@@ -1,0 +1,36 @@
+{extend name='base'/}
+{block name='content'}
+<ol class="breadcrumb">
+	<li>
+		<a href="{:url('admin/index/index')}"><i class="fa fa-fw fa-cogs"></i>后台首页</a>
+	</li>
+	<li>
+		<a href="{:url('index')}">分类管理</a>
+	</li>
+	<li class="active">
+		<a href="">分类展示</a>
+	</li>
+</ol>
+<ul class="nav nav-tabs" role="tablist">
+	<li class="active"><a href="">分类列表</a></li>
+	<li><a href="{:url('store')}">添加分类</a></li>
+</ul>
+<ul class="list-group">
+{volist name="list" id="c"}
+	<li class="list-group-item">
+		<!-- if -->
+		<!-- <span class="badge">新</span> -->
+		<!-- endif -->
+		<a href="{:url('edit', ['id'=>$c.id])}">
+			<h4 class="list-group-item-heading">
+				<b>【{$c.icon}】</b>{$c.name}
+			</h4>
+			<p class="list-group-item-text">
+				{$c.des}
+			</p>
+		</a>
+	</li>
+{/volist}
+</ul>
+<div class="pagination pagination-sm pull-right"></div>
+{/block}
