@@ -15,7 +15,7 @@ return [
     // 服务器地址
     'hostname'        => getenv('OPENSHIFT_MYSQL_DB_HOST') ? : '127.0.0.1',
     // 数据库名
-    'database'        => getenv('OPENSHIFT_APP_NAME') ? : '',
+    'database'        => getenv('OPENSHIFT_APP_NAME') ? : 'test',
     // 用户名
     'username'        => getenv('OPENSHIFT_MYSQL_DB_USERNAME') ? : 'root',
     // 密码
