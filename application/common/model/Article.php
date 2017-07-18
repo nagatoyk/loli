@@ -2,9 +2,7 @@
 
 namespace app\common\model;
 
-use Michelf\Markdown;
 use think\Model;
-use think\Request;
 
 class Article extends Model
 {
