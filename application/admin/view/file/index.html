@@ -1,6 +1,18 @@
 {extend name='base'/}
 {block name='content'}
+<script>
+    var del = function(id) {
+        var url = '{:url('del')}';
+        // alert(id)
+        $.post(url, 'id=' + id, function(r) {
+            alert(r)
+        })
+    };
+</script>
 {volist name='file' id='f'}
-<img src="{$f.path}" style="width: 200px;height: auto;cursor: pointer" onclick="window.open(this.src,'_image');return false">
+<div class="col-xs-2">
+    <img src="{$f.path}" style="width: 200px;height: auto;cursor: pointer" onclick="window.open(this.src,'_image');return false">
+    <p><a href="" class="btn">编辑</a>|<a href="javascript:del({$f.id})" class="btn">删除</a></p>
+</div>
 {/volist}
 {/block}
