@@ -4,7 +4,7 @@ namespace app\admin\controller;
 
 use think\Controller;
 
-class rizhi extends Controller
+class Rizhi extends Controller
 {
     //
     public function index()
