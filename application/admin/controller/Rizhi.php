@@ -9,7 +9,7 @@ class Rizhi extends Controller
     //
     public function index()
     {
-        $list = model('Rizhi')->order('id', 'DESC');
+        $list = model('Rizhi')->order('id', 'DESC')->select();
         $data = [];
         foreach($list as $da)
         {
