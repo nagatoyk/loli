@@ -38,7 +38,12 @@ class Rizhi extends Controller
             $data = input('post.');
             $data['time'] = time();
             $res = $rizhi->store(['data'=>json_encode($data)]);
-            echo $res['msg'];
+            if($res)
+            {
+                $this->success($res['msg'], 'index');
+            }else{
+                $this->error($res['msg']);
+            }
         }
     }
 }
