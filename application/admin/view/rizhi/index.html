@@ -46,11 +46,20 @@
         <tr>
             <td>长短款(负数为短款)</td>
             <td>
-                <input type="text" name="dk">
+                <input type="text" name="cdk">
             </td>
         </tr>
     </table>
     <input type="submit" value="添加">
 </form>
+{volist name='rizhi' id='r'}
+系统现金收取{$r.xj1} /
+实际现金收取{$r.xj2} /
+系统差额{$r.ce1} /
+系统支付宝收取{$r.alipay1} /
+实际支付宝收取{$r.alipay2} /
+实际差额{$r.ce2} /
+长端口{$r.cdk}
+{/volist}
 </body>
 </html>
