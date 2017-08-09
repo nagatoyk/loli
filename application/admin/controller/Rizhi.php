@@ -18,7 +18,8 @@ class Rizhi extends Controller
         {
             $data = json_encode(input('post.'));
             $rizhi = new \app\common\model\Rizhi();
-            $rizhi->insert($data);
+            $res = $rizhi->store($data);
+            echo $res['msg'];
         }
     }
 }
