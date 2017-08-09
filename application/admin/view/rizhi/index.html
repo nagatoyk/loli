@@ -46,24 +46,26 @@
         <tr>
             <td>长短款(负数为短款)</td>
             <td>
-                <input type="text" name="cdk">
+                <input type="number" name="cdk">
             </td>
         </tr>
     </table>
     <input type="submit" value="添加">
 </form>
+<table>
 {volist name='rizhi' id='r'}
-<p>
-{$r.id} /
-添加时间 <b>{$r.time} </b> /
-系统现金收取 <b>{$r.xj1}</b> 元 /
-实际现金收取 <b>{$r.xj2}</b> 元 /
-系统差额 <b>{$r.ce1}</b> 元 /
-系统支付宝收取 <b>{$r.alipay1}</b> 元 /
-实际支付宝收取 <b>{$r.alipay2}</b> 元 /
-实际差额 <b>{$r.ce2}</b> 元 /
-长短口 <b>{$r.cdk}</b> 元
-</p>
+    <tr>
+        <td>{$r.id}</td>
+        <td>系统现金收取 <b>{$r.xj1}</b> 元</td>
+        <td>实际现金收取 <b>{$r.xj2}</b> 元</td>
+        <td>现金差额 <b>{$r.ce1}</b> 元</td>
+        <td>系统支付宝收取 <b>{$r.alipay1}</b> 元</td>
+        <td>实际支付宝收取 <b>{$r.alipay2}</b> 元</td>
+        <td>支付宝差额 <b>{$r.ce2}</b> 元</td>
+        <td>长短款 <b>{$r.cdk}</b> 元</td>
+        <td>添加时间 <b>{$r.time}</b></td>
+    </tr>
+</table>
 {/volist}
 </body>
 </html>
