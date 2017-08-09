@@ -35,6 +35,7 @@ class Rizhi extends Controller
         if(request()->isPost())
         {
             $rizhi = new \app\common\model\Rizhi();
+            $data = array();
             $data = json_encode(input('post.'));
             $data['time'] = time();
             $res = $rizhi->store(['data'=>$data]);
