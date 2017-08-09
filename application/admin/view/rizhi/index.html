@@ -54,13 +54,14 @@
 </form>
 {volist name='rizhi' id='r'}
 {$r.id} /
-系统现金收取{$r.xj1} /
-实际现金收取{$r.xj2} /
-系统差额{$r.ce1} /
-系统支付宝收取{$r.alipay1} /
-实际支付宝收取{$r.alipay2} /
-实际差额{$r.ce2} /
-长端口{$r.cdk}
+添加时间 <b>{$r.time} </b> /
+系统现金收取 <b>{$r.xj1}</b> 元 /
+实际现金收取 <b>{$r.xj2}</b> 元 /
+系统差额 <b>{$r.ce1}</b> 元 /
+系统支付宝收取 <b>{$r.alipay1}</b> 元 /
+实际支付宝收取 <b>{$r.alipay2}</b> 元 /
+实际差额 <b>{$r.ce2}</b> 元 /
+长短口 <b>{$r.cdk}</b> 元
 {/volist}
 </body>
 </html>

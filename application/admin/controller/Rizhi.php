@@ -16,6 +16,7 @@ class Rizhi extends Controller
             $d = json_decode($da['data'], true);
             $data[] = [
                 'id'=>$da['id'],
+                'time'=>$d['time'],
                 'xj1'=>$d['xj1'],
                 'xj2'=>$d['xj2'],
                 'alipay1'=>$d['alipay1'],
@@ -34,7 +35,9 @@ class Rizhi extends Controller
         if(request()->isPost())
         {
             $rizhi = new \app\common\model\Rizhi();
-            $res = $rizhi->store(['data'=>json_encode(input('post.'))]);
+            $data = json_encode(input('post.'));
+            $data['time'] = time();
+            $res = $rizhi->store(['data'=>$data]);
             echo $res['msg'];
         }
     }
