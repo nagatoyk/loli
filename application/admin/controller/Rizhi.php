@@ -16,9 +16,8 @@ class Rizhi extends Controller
     {
         if(request()->isPost())
         {
-            $data = json_encode(input('post.'));
             $rizhi = new \app\common\model\Rizhi();
-            $res = $rizhi->store($data);
+            $res = $rizhi->store(input('post.'));
             echo $res['msg'];
         }
     }
