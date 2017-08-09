@@ -13,7 +13,7 @@ class Rizhi extends Controller
         $data = [];
         foreach($list as $da)
         {
-            $d = json_decode($da['data']);
+            $d = json_decode($da['data'], true);
             $data[] = [
                 'id'=>$da['id'],
                 'xj1'=>$d['xj1'],
