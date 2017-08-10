@@ -28,6 +28,8 @@ class File extends Common
     }
     public function del()
     {
-        return [input('post.id')];
+        $id = input('post.id');
+        $d = $this->db->where('id',$id)->first();
+        return [$d];
     }
 }
