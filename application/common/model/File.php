@@ -38,4 +38,11 @@ class File extends Model
             return ['valid'=>0,'msg'=>'没有文件上传'];
         }
     }
+    public function destray($id)
+    {
+        $info = $this->where('id', $id)->find();
+        dump(file_exists($info->path));
+        die();
+        file_exists($info->path) && unlink($info->path);
+    }
 }
