@@ -15,23 +15,42 @@
     <li class="active"><a href="">日志列表</a></li>
     <li><a href="{:url('store')}">添加日志</a></li>
 </ul>
-<ul class="list-group">
-    {volist name='data' id='r'}
-    <li class="list-group-item">
-        {if condition="date('d', $r.created) eq date('d', time())"}
-        <span class="badge">新</span>
-        {/if}
-        <a href="{:url('edit',['id'=>$r.id])}">
-            <h4 class="list-group-item-heading">
-                123
-            </h4>
-            <p class="list-group-item-text">
-                <b>123</b> 添加于 <time>{:date('Y-m-d H:i:s', $r.created)}</time>
-            </p>
-        </a>
-    </li>
-    {/volist}
-</ul>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <td>序号</td>
+                <td>系统现金</td>
+                <td>实际现金</td>
+                <td>现金差额(负数为短款)</td>
+                <td>系统支付宝</td>
+                <td>实际支付宝</td>
+                <td>支付宝差额(负数为短款)</td>
+                <td>实际长短款(负数为短款)</td>
+                <td>积分兑换</td>
+                <td width="200">添加时间</td>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name='data' id='r'}
+                <tr>
+                    <td>{$r.id}</td>
+                    <td>{$r.xj1}</td>
+                    <td>{$r.xj2}</td>
+                    <td>{$r.ce1}</td>
+                    <td>{$r.alipay1}</td>
+                    <td>{$r.alipay2}</td>
+                    <td>{$r.ce2}</td>
+                    <td>{$r.cdk}</td>
+                    <td>{$r.jifen}</td>
+                    <td>{:date('Y-m-d H:i:s', $r.created)}</td>
+                </tr>
+            {/volist}
+            </tbody>
+        </table>
+    </div>
+</div>
 <div class="pagination pagination-sm pull-right">
     {$data->render()}
 </div>
