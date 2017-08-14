@@ -7,7 +7,14 @@ use think\Model;
 class File extends Model
 {
     protected $pk = 'id';
+
     protected $table = 'imouto_core_attachment';
+
+    public function getAll($size)
+    {
+        return $this->order('id', 'desc')->paginate($size, false, ['page'=>input('param.page', 1, 'intval')]);
+    }
+
     public function store($field)
     {
         $file = request()->file($field);

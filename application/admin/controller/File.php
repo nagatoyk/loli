@@ -12,7 +12,7 @@ class File extends Common
     }
     public function index()
     {
-        $file = $this->db->select();
+        $file = $this->db->getAll(15);
         $this->assign('file', $file);
         return $this->fetch();
     }
