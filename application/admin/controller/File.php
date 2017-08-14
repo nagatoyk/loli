@@ -28,6 +28,12 @@ class File extends Common
     }
     public function del()
     {
-        return $this->db->destray(input('post.id'));
+        $res = $this->db->destray(input('post.id'));
+        if($res)
+        {
+            $this->success($res['msg'],'index');
+        }else{
+            $this->error($res['msg']);
+        }
     }
 }
