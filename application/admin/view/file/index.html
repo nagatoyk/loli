@@ -9,6 +9,19 @@
         })
     };
 </script>
+<form action="{:url('del')}" method="post" class="form-horizontal">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">删除指定路径附件</h3>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+            <input type="text" name="path" class="form-control" placeholder="图片地址">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">删除</button>
+</form>
 {volist name='file' id='f'}
 <div class="col-xs-2">
     <img src="{$f.path}" style="width: 200px;height: auto;cursor: pointer" onclick="window.open(this.src,'_image');return false">

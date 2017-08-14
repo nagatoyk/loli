@@ -41,9 +41,8 @@ class File extends Model
     public function destray($id)
     {
         $info = $this->where('id', $id)->find();
-        dump(file_exists(ROOT_PATH.'public'.$info->path));
-        exit();
-        file_exists(ROOT_PATH.'public'.$info->path) && unlink($info->path);
+        define('FILE_PATH', ROOT_PATH.'public'.$info->path);
+        file_exists(FILE_PATH) && unlink(FILE_PATH);
         $res = $this->where('id', $id)->delete();
         if($res)
         {
