@@ -15,24 +15,8 @@ class Rizhi extends Controller
 
     public function index()
     {
-        $list = $this->db->order('id', 'DESC')->select();
-        $data = [];
-        foreach($list as $da)
-        {
-            $d = json_decode($da['data'], true);
-            $data[] = [
-                'id'=>$da['id'],
-                'time'=>$d['time'],
-                'xj1'=>$d['xj1'],
-                'xj2'=>$d['xj2'],
-                'alipay1'=>$d['alipay1'],
-                'alipay2'=>$d['alipay2'],
-                'ce1'=>$d['ce1'],
-                'ce2'=>$d['ce2'],
-                'cdk'=>$d['cdk']
-            ];
-        }
-        $this->assign('rizhi', $data);
+        $data = $this->db->getAll(6);
+        $this->assign('data', $data);
         return $this->fetch();
     }
 
@@ -40,9 +24,7 @@ class Rizhi extends Controller
     {
         if(request()->isPost())
         {
-            $data = input('post.');
-            $data['time'] = time();
-            $res = $this->db->store(['data'=>json_encode($data)]);
+            $res = $this->db->store(input('post.'));
             if($res)
             {
                 $this->success($res['msg'], 'index');
@@ -50,5 +32,6 @@ class Rizhi extends Controller
                 $this->error($res['msg']);
             }
         }
+        return $this->fetch();
     }
 }

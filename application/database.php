@@ -16,9 +16,9 @@ return [
     'hostname'        => getenv('OPENSHIFT_MYSQL_DB_HOST') ? : '127.0.0.1',
     // 数据库名
     'database'        => getenv('OPENSHIFT_APP_NAME') ? : 'test',
-    // 用户名
+    // 用户名 admin8Kc4DPL
     'username'        => getenv('OPENSHIFT_MYSQL_DB_USERNAME') ? : 'root',
-    // 密码
+    // 密码 TAG1H1MeuPIL
     'password'        => getenv('OPENSHIFT_MYSQL_DB_PASSWORD') ? : '',
     // 端口
     'hostport'        => getenv('OPENSHIFT_MYSQL_DB_PORT') ? : 3306,

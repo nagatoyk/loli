@@ -11,6 +11,18 @@ class Rizhi extends Model
 
     protected $table = 'imouto_rizhi';
 
+    protected $insert = ['created'];
+
+    protected function setCreatedAttr($value)
+    {
+        return time();
+    }
+
+    public function getAll($size)
+    {
+        return $this->order('created','desc')->paginate($size, false, ['page'=>input('param.page',1,'intval')]);
+    }
+
     public function store($data)
     {
         $res = $this->validate(false)->save($data);

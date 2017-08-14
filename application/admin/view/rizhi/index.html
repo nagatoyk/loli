@@ -1,71 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>日志</title>
-</head>
-<body>
-<form action="store" method="post">
-    <table>
-        <tr>
-            <td>系统现金收入</td>
-            <td>
-                <input type="number" name="xj1">
-            </td>
-        </tr>
-        <tr>
-            <td>实际现金收入</td>
-            <td>
-                <input type="number" name="xj2">
-            </td>
-        </tr>
-        <tr>
-            <td>现金差额</td>
-            <td>
-                <input type="number" name="ce1">
-            </td>
-        </tr>
-        <tr>
-            <td>系统支付宝收入</td>
-            <td>
-                <input type="number" name="alipay1">
-            </td>
-        </tr>
-        <tr>
-            <td>实际支付宝收入</td>
-            <td>
-                <input type="number" name="alipay2">
-            </td>
-        </tr>
-        <tr>
-            <td>支付宝差额</td>
-            <td>
-                <input type="number" name="ce2">
-            </td>
-        </tr>
-        <tr>
-            <td>长短款(负数为短款)</td>
-            <td>
-                <input type="number" name="cdk">
-            </td>
-        </tr>
-    </table>
-    <input type="submit" value="添加">
-</form>
-<table>
-{volist name='rizhi' id='r'}
-    <tr>
-        <td>{$r.id}</td>
-        <td>系统现金收取 <b>{$r.xj1}</b> 元</td>
-        <td>实际现金收取 <b>{$r.xj2}</b> 元</td>
-        <td>现金差额 <b>{$r.ce1}</b> 元</td>
-        <td>系统支付宝收取 <b>{$r.alipay1}</b> 元</td>
-        <td>实际支付宝收取 <b>{$r.alipay2}</b> 元</td>
-        <td>支付宝差额 <b>{$r.ce2}</b> 元</td>
-        <td>长短款 <b>{$r.cdk}</b> 元</td>
-        <td>添加时间 <b>{$r.time}</b></td>
-    </tr>
-{/volist}
-</table>
-</body>
-</html>
+{extend name='base'/}
+{block name='content'}
+<ol class="breadcrumb">
+    <li>
+        <a href="{:url('admin/index/index')}"><i class="fa fa-fw fa-cogs"></i>后台首页</a>
+    </li>
+    <li>
+        <a href="{:url('index')}">日志管理</a>
+    </li>
+    <li class="active">
+        <a href="">日志展示</a>
+    </li>
+</ol>
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="">日志列表</a></li>
+    <li><a href="{:url('store')}">添加日志</a></li>
+</ul>
+<ul class="list-group">
+    {volist name='data' id='r'}
+    <li class="list-group-item">
+        {if condition="date('d', $r.created) eq date('d', time())"}
+        <span class="badge">新</span>
+        {/if}
+        <a href="{:url('edit',['id'=>$r.id])}">
+            <h4 class="list-group-item-heading">
+                123
+            </h4>
+            <p class="list-group-item-text">
+                <b>123</b> 添加于 <time>{:date('Y-m-d H:i:s', $r.created)}</time>
+            </p>
+        </a>
+    </li>
+    {/volist}
+</ul>
+<div class="pagination pagination-sm pull-right">
+    {$data->render()}
+</div>
+{/block}
