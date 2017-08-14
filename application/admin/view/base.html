@@ -213,6 +213,24 @@
 				</div>
 			</div>
 			<!-- 站点管理 end -->
+			<!-- 其他管理 start -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a class="panel-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true">
+							<i class="fa fa-fw fa-chevron-circle-down"></i>
+							其他管理
+						</a>
+					</h4>
+				</div>
+				<div id="collapse6" class="panel-collapse collapse{if condition="request()->controller() eq 'Rizhi'"} in{/if}">
+					<a href="{:url('admin/rizhi/index')}" class="list-group-item">
+						<i class="fa fa-fw fa-list-ol"></i>
+						日志列表
+					</a>
+				</div>
+			</div>
+			<!-- 其他管理 end -->
 		</div>
 		<div class="col-xs-12 col-sm-9 col-lg-10">
 			{block name='content'}{/block}
