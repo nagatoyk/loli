@@ -41,4 +41,16 @@ class Rizhi extends Common
         $this->assign('rizhi', $data);
         return $this->fetch();
     }
+
+    public function del()
+    {
+        $info = $this->db->find(input('param.id'));
+        if($info)
+        {
+            $this->db->delete($info->id);
+            $this->success('删除成功!', 'index');
+        }else{
+            $this->error('删除失败!');
+        }
+    }
 }
