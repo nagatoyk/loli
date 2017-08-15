@@ -32,4 +32,14 @@ class Rizhi extends Common
         }
         return $this->fetch();
     }
+
+    public function edit()
+    {
+        if(request()->isPost())
+        {}
+        $id = input('get.id');
+        dump($id);
+        exit();
+        return $this->fetch();
+    }
 }
