@@ -46,7 +46,18 @@
                     <td>{$r.cdk}</td>
                     <td>{$r.jifen}</td>
                     <td>{:date('Y-m-d H:i:s', $r.created)}</td>
-                    <td>编辑|删除</td>
+                    <td>
+                        <div class="btn-group">
+                            <button data-toggle="dropdown" class="btn btn-primary btn-x">操作<span class="caret"></span></button>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li>
+                                    <a href="{:url('edit', ['id'=>$r.id])}">修改</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="{:url('del', ['id'=>$r.id])}">删除</a></li>
+                            </ul>
+                        </div>
+                    </td>
                 </tr>
             {/volist}
             </tbody>
