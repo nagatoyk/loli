@@ -38,6 +38,7 @@ class Rizhi extends Common
         if(request()->isPost())
         {}
         $data = $this->db->where('id', input('param.id'))->select();
+        dump($data);
         $this->assign('rizhi', $data);
         return $this->fetch();
     }
