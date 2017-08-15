@@ -57,8 +57,7 @@ class Article extends Common
     // 删除
     public function del()
     {
-        $pid = input('param.pid');
-        $res = $this->db->destray($pid);
+        $res = $this->db->destray(input('param.pid'));
         if($res['valid'])
         {
             $this->success($res['msg'], 'index');

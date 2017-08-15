@@ -36,7 +36,15 @@ class Rizhi extends Common
     public function edit()
     {
         if(request()->isPost())
-        {}
+        {
+            $res = $this->db->edit(input('post.'));
+            if($res['valid'])
+            {
+                $this->success($res['msg'], url('edit', ['id'=>input('param.id')]));
+            }else{
+                $this->error($res['msg']);
+            }
+        }
         $data = $this->db->find(input('param.id'));
         $this->assign('rizhi', $data);
         return $this->fetch();
@@ -44,13 +52,12 @@ class Rizhi extends Common
 
     public function del()
     {
-        $info = $this->db->find(input('param.id'));
-        if($info)
+        $res = $this->db->destray(input('param.id'));
+        if($res['valid'])
         {
-            $this->db->delete($info->id);
-            $this->success('删除成功!', 'index');
+            $this->success($res['msg'], 'index');
         }else{
-            $this->error('删除失败!');
+            $this->error($res['msg']);
         }
     }
 }

@@ -33,4 +33,28 @@ class Rizhi extends Model
             return ['valid'=>0, 'msg'=>$this->getError()];
         }
     }
+
+    public function edit($data)
+    {
+        $res = $this->validate(true)->save($data, [$this->pk=>$data['id']]);
+        if($res !== false)
+        {
+            return ['valid'=>1, 'msg'=>'修改成功'];
+        }else{
+            return ['valid'=>0, 'msg'=>$this->getError()];
+        }
+    }
+
+    public function destray($id)
+    {
+        if(!$this->find($id))
+        {
+            return ['valid'=>0, 'msg'=>$this->getError()];
+        }
+        $res = $this->delete($id);
+        if($res)
+        {
+            return ['valid'=>1, 'msg'=>'删除成功'];
+        }
+    }
 }

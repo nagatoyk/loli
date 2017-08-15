@@ -59,8 +59,7 @@ class Article extends Model
     // 删除
     public function destray($pid)
     {
-        $post = $this->where('pid', $pid)->find();
-        if(!$post)
+        if(!$this->where('pid', $pid)->find())
         {
             return ['valid'=>0, 'msg'=>$this->getError()];
         }
