@@ -2,9 +2,7 @@
 
 namespace app\admin\controller;
 
-use think\Controller;
-
-class Rizhi extends Controller
+class Rizhi extends Common
 {
     protected $db;
     public function _initialize()
