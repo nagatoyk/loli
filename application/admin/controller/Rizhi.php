@@ -37,7 +37,7 @@ class Rizhi extends Common
     {
         if(request()->isPost())
         {}
-        $id = input('get.id');
+        $id = input('param.id');
         dump($id);
         exit();
         return $this->fetch();
