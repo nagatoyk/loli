@@ -1,6 +1,6 @@
 {extend name='base'/}
 {block name='content'}
-<form method="get" id="S" action="#">
+<form method="post" id="S" action="#">
     <div class="I">
         <input type="search" name="s" autocomplete="off" placeholder="搜索 (っ °Д °;)っ">
     </div>
@@ -13,6 +13,17 @@
         </li>
     </ul>
 </form>
+<script>
+    var SURL = "{:url('search')}",
+        redate = function(e){
+            var h = new Date(), d = new Date((e + '').match(/[0-9]{10}/) ? e * 1000 : e), g = parseInt, f = g((h - d) / 1000);
+            return !e || f < 0 ? "刚刚" : f < 60 ? (f + "秒前") : (f /= 60) < 60 ? g(f) + "分前" : (f /= 60) < 24 ? g(f) + "时前" : (f /= 24) < 7 ? g(f) + "天前" : (f /= 7) < 2 ? g(f) + "周前" : d > new Date(h.getFullYear() + "-01-01") ? (d.getMonth() + 1) + "月" + d.getDate() + "日" : d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日";
+        },
+        url = function(id){
+            return '/archive/' + id + '.html'
+        };
+</script>
+<script src="__STATIC__/js/search.js"></script>
 {volist name='data' id='a' empty='<p class=\"banner\">没有内容惹！ :(</p>'}
 <article class="p">
     <a href="{:url('index/article/index', ['pid'=>$a.pid])}">
