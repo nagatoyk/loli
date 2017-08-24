@@ -43,6 +43,7 @@ class Index extends Common
                 $o['text'] = mb_substr($o['text'], 0, 100).'…';
                 $o['text'] = str_replace(PHP_EOL, ' ', $o['text']);
                 unset($o['modified']);
+                $o['url'] = url('index/article/index', ['pid'=>$o['pid']]);
                 return $o;
             }, $data);
         }
