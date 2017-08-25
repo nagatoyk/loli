@@ -27,7 +27,6 @@ class File extends Common
         }
     }
     public function del()
-    {
         if(request()->isPost())
         {
             file_exists(ROOT_PATH.'public'.input('post.path')) && unlink(ROOT_PATH.'public'.input('post.path'));

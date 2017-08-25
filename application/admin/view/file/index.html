@@ -3,7 +3,6 @@
 <script>
     var del = function(id) {
         var url = '{:url('del')}';
-        // alert(id)
         $.post(url, 'id=' + id, function(r) {
             alert(r)
         })
