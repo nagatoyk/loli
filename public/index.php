@@ -11,7 +11,8 @@
 
 //$list = glob('../*');
 //echo '<pre>'.print_r($list, true).'</pre>';
-//die();
+echo MYSQL_HOST;
+die();
 // [ 应用入口文件 ]
 // 定义应用目录
 define('APP_PATH', __DIR__ . '/../application/');
