@@ -13,7 +13,7 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => getenv('MYSQL_HOST'),
+    'hostname'        => '172.30.73.249',
     // 数据库名
     'database'        => getenv('MYSQL_DATABASE'),
     // 用户名
