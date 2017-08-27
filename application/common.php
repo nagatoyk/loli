@@ -10,11 +10,11 @@
 // +----------------------------------------------------------------------
 
 // 应用公共文件
-function mdToHtml($data, $field, $type = 'art', $Url = null)
+function mdToHtml($data, $field, $type = 'art', $url = null)
 {
-    if($type != 'art' && !is_null($Url))
+    if($type != 'art' && !is_null($url))
     {
-        $text = ($i = strpos($data[$field], '<!--more-->')) !== false ? substr($data[$field], 0, $i + 11) . '<p class="more"><a href="' . $Url . '">- 查看更多 -</a></p>' : $data[$field];
+        $text = ($i = strpos($data[$field], '<!--more-->')) !== false ? substr($data[$field], 0, $i + 11) . '<p class="more"><a href="' . $url . '">- 查看更多 -</a></p>' : $data[$field];
     }else{
         $text = $data[$field];
     }
