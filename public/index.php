@@ -12,7 +12,7 @@
 // $list = glob('../*');
 // echo '<pre>'.print_r($list, true).'</pre>';
 // echo '<pre>'.print_r($_SERVER).'</pre>';
-$conn=mysql_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USERNAME'), getenv('MYSQL_PASSWORD')); //连接数据库
+$conn=mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USERNAME'), getenv('MYSQL_PASSWORD')); //连接数据库
 mysql_query('set names utf8'); //数据库输出编码
 mysql_select_db(getenv('MYSQL_DATABASE')); //打开数据库
 $sql = <<<STR
