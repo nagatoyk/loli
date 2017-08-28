@@ -12,7 +12,7 @@
 // $list = glob('../*');
 // echo '<pre>'.print_r($list, true).'</pre>';
 // echo '<pre>'.print_r($_SERVER).'</pre>';
-$sqL1 = <<<STR
+$sql1 = <<<STR
 CREATE TABLE IF NOT EXISTS `imouto_article` (
   `pid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(200) DEFAULT NULL,
