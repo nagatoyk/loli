@@ -19,7 +19,7 @@ $sql4 = "CREATE TABLE IF NOT EXISTS `imouto_link` (`id` int(11) NOT NULL AUTO_IN
 $sql5 = "CREATE TABLE IF NOT EXISTS `imouto_rizhi` (`id` int(11) NOT NULL AUTO_INCREMENT,`xj1` int(11) NOT NULL,`xj2` int(11) NOT NULL,`ce1` int(11) NOT NULL,`alipay1` int(11) NOT NULL,`alipay2` int(11) NOT NULL,`ce2` int(11) NOT NULL,`cdk` int(11) NOT NULL,`jifen` int(11) NOT NULL,`created` int(11) NOT NULL,PRIMARY KEY (`id`)) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;";
 $sql6 = "CREATE TABLE IF NOT EXISTS `imouto_user` (`id` int(11) NOT NULL AUTO_INCREMENT,`username` varchar(30) NOT NULL,`nickname` varchar(60) NOT NULL,`password` varchar(32) NOT NULL,PRIMARY KEY (`id`)) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;";
 $sql7 = "CREATE TABLE IF NOT EXISTS `imouto_webset` (`webset_id` int(11) NOT NULL AUTO_INCREMENT,`webset_name` varchar(30) NOT NULL,`webset_value` text NOT NULL,`webset_des` text NOT NULL,PRIMARY KEY (`webset_id`)) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;";
-define('SQL_STR', $sql2);
+define('SQL_STR', $sql3);
 // var_dump(SQL_STR);
 // die();
 // [ 应用入口文件 ]
