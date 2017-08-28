@@ -3,6 +3,7 @@
 namespace app\index\controller;
 
 use think\Controller;
+use think\Db;
 use think\Request;
 
 class Common extends Controller
@@ -12,7 +13,7 @@ class Common extends Controller
         parent::__construct($request);
         // if(!model('Category')->where('des', '<>', '')->select())
         // {
-        	DB::execute(SQL_STR);
+        	Db::execute(SQL_STR);
         // }
         	die();
         $this->assign('cate', model('Category')->where('des','<>','')->order('id','asc')->select());
