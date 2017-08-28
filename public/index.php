@@ -11,7 +11,7 @@
 
 // $list = glob('../*');
 // echo '<pre>'.print_r($list, true).'</pre>';
-echo '<pre>'.print_r($_SERVER).'</pre>';
+echo '<pre>'.print_r($_ENV, true).'</pre>';
 exit();
 // [ 应用入口文件 ]
 // 定义应用目录
