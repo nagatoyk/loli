@@ -12,9 +12,6 @@
 // $list = glob('../*');
 // echo '<pre>'.print_r($list, true).'</pre>';
 // echo '<pre>'.print_r($_SERVER).'</pre>';
-$conn=mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USERNAME'), getenv('MYSQL_PASSWORD')); //连接数据库
-mysql_query('set names utf8'); //数据库输出编码
-mysql_select_db(getenv('MYSQL_DATABASE')); //打开数据库
 $sql = <<<STR
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -91,8 +88,8 @@ CREATE TABLE IF NOT EXISTS `imouto_webset` (
   PRIMARY KEY (`webset_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 STR;
-mysql_query($sql);
-mysql_close(); //关闭MySQL连接
+define('SQL_STR', $sql);
+echo SQL_STR;
 exit();
 // [ 应用入口文件 ]
 // 定义应用目录
