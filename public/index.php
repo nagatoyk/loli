@@ -12,7 +12,7 @@
 // $list = glob('../*');
 // echo '<pre>'.print_r($list, true).'</pre>';
 // echo '<pre>'.print_r($_SERVER).'</pre>';
-$sql1 = <<<STR
+$sql = <<<STR
 CREATE TABLE IF NOT EXISTS `imouto_article` (
   `pid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(200) DEFAULT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `imouto_article` (
   KEY `created` (`created`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 STR;
-$sql2 = <<<STR
+/*$sql2 = <<<STR
 CREATE TABLE IF NOT EXISTS `imouto_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `icon` varchar(30) NOT NULL,
@@ -91,8 +91,8 @@ CREATE TABLE IF NOT EXISTS `imouto_webset` (
   `webset_des` text NOT NULL,
   PRIMARY KEY (`webset_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-STR;
-define('SQL_STR', $sql1);
+STR;*/
+define('SQL_STR', $sql);
 // [ 应用入口文件 ]
 // 定义应用目录
 define('APP_PATH', __DIR__ . '/../application/');
