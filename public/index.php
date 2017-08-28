@@ -12,7 +12,7 @@
 // $list = glob('../*');
 // echo '<pre>'.print_r($list, true).'</pre>';
 // echo '<pre>'.print_r($_SERVER).'</pre>';
-$sql = <<<STR
+$sqL1 = <<<STR
 CREATE TABLE IF NOT EXISTS `imouto_article` (
   `pid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(200) DEFAULT NULL,
@@ -26,7 +26,8 @@ CREATE TABLE IF NOT EXISTS `imouto_article` (
   PRIMARY KEY (`pid`),
   KEY `created` (`created`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
+STR;
+$sql2 = <<<STR
 CREATE TABLE IF NOT EXISTS `imouto_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `icon` varchar(30) NOT NULL,
@@ -34,7 +35,8 @@ CREATE TABLE IF NOT EXISTS `imouto_category` (
   `des` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
+STR;
+$sql3 = <<<STR
 CREATE TABLE IF NOT EXISTS `imouto_core_attachment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
@@ -46,7 +48,8 @@ CREATE TABLE IF NOT EXISTS `imouto_core_attachment` (
   `data` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
+STR;
+$sql4 = <<<STR
 CREATE TABLE IF NOT EXISTS `imouto_link` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `icon` varchar(30) NOT NULL,
@@ -55,7 +58,8 @@ CREATE TABLE IF NOT EXISTS `imouto_link` (
   `des` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
+STR;
+$sql5 = <<<STR
 CREATE TABLE IF NOT EXISTS `imouto_rizhi` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `xj1` int(11) NOT NULL,
@@ -69,7 +73,8 @@ CREATE TABLE IF NOT EXISTS `imouto_rizhi` (
   `created` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
+STR;
+$sql5 = <<<STR
 CREATE TABLE IF NOT EXISTS `imouto_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
@@ -77,7 +82,8 @@ CREATE TABLE IF NOT EXISTS `imouto_user` (
   `password` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
+STR;
+$sql6 = <<<STR
 CREATE TABLE IF NOT EXISTS `imouto_webset` (
   `webset_id` int(11) NOT NULL AUTO_INCREMENT,
   `webset_name` varchar(30) NOT NULL,
@@ -86,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `imouto_webset` (
   PRIMARY KEY (`webset_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 STR;
-define('SQL_STR', $sql);
+define('SQL_STR', $sql1);
 // echo SQL_STR;
 // exit();
 // [ 应用入口文件 ]
