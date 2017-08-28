@@ -26,7 +26,7 @@ class File extends Common
             return json_encode(['success'=>0, 'message'=>$res['msg']]);
         }
     }
-    public function del()
+    public function del(){
         if(request()->isPost())
         {
             file_exists(ROOT_PATH.'public'.input('post.path')) && unlink(ROOT_PATH.'public'.input('post.path'));
