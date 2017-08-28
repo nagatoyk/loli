@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `imouto_webset` (
 STR;
 define('SQL_STR', $sql1);
 echo SQL_STR;
-exit();
+die();
 // [ 应用入口文件 ]
 // 定义应用目录
 define('APP_PATH', __DIR__ . '/../application/');
