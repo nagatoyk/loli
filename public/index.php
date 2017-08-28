@@ -20,8 +20,8 @@ $sql5 = "CREATE TABLE IF NOT EXISTS `imouto_rizhi` (`id` int(11) NOT NULL AUTO_I
 $sql6 = "CREATE TABLE IF NOT EXISTS `imouto_user` (`id` int(11) NOT NULL AUTO_INCREMENT,`username` varchar(30) NOT NULL,`nickname` varchar(60) NOT NULL,`password` varchar(32) NOT NULL,PRIMARY KEY (`id`)) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;";
 $sql7 = "CREATE TABLE IF NOT EXISTS `imouto_webset` (`webset_id` int(11) NOT NULL AUTO_INCREMENT,`webset_name` varchar(30) NOT NULL,`webset_value` text NOT NULL,`webset_des` text NOT NULL,PRIMARY KEY (`webset_id`)) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;";
 define('SQL_STR', $sql);
-var_dump(SQL_STR);
-die();
+// var_dump(SQL_STR);
+// die();
 // [ 应用入口文件 ]
 // 定义应用目录
 define('APP_PATH', __DIR__ . '/../application/');
