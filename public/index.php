@@ -12,21 +12,7 @@
 // $list = glob('../*');
 // echo '<pre>'.print_r($list, true).'</pre>';
 // echo '<pre>'.print_r($_SERVER).'</pre>';
-$sql = <<<STR
-CREATE TABLE IF NOT EXISTS `imouto_article` (
-  `pid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(200) DEFAULT NULL,
-  `created` int(10) unsigned DEFAULT '0',
-  `modified` int(10) unsigned DEFAULT '0',
-  `text` text,
-  `cover` varchar(32) NOT NULL,
-  `category` varchar(10) NOT NULL,
-  `authorId` int(10) unsigned DEFAULT '0',
-  `look` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`pid`),
-  KEY `created` (`created`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-STR;
+$sql = "CREATE TABLE IF NOT EXISTS `imouto_article` (`pid` int(10) unsigned NOT NULL AUTO_INCREMENT,`title` varchar(200) DEFAULT NULL,`created` int(10) unsigned DEFAULT '0',`modified` int(10) unsigned DEFAULT '0',`text` text,`cover` varchar(32) NOT NULL,`category` varchar(10) NOT NULL,`authorId` int(10) unsigned DEFAULT '0',`look` int(11) NOT NULL DEFAULT '0',PRIMARY KEY (`pid`),KEY `created` (`created`)) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;";
 /*$sql2 = <<<STR
 CREATE TABLE IF NOT EXISTS `imouto_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
