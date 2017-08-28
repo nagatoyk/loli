@@ -7,6 +7,7 @@ class Index extends Common
 	// 后台首页
 	public function index()
 	{
+        dump($_ENV);
 		// 加载模板
         $art = model('Article')->order('pid','desc')->limit(10)->select();
         $this->assign('art', $art);
