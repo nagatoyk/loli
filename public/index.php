@@ -89,8 +89,8 @@ CREATE TABLE IF NOT EXISTS `imouto_webset` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 STR;
 define('SQL_STR', $sql);
-echo SQL_STR;
-exit();
+// echo SQL_STR;
+// exit();
 // [ 应用入口文件 ]
 // 定义应用目录
 define('APP_PATH', __DIR__ . '/../application/');
