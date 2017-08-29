@@ -31,13 +31,14 @@ class File extends Common
         {
             file_exists(ROOT_PATH.'public'.input('post.path')) && unlink(ROOT_PATH.'public'.input('post.path'));
             $this->success('删除成功!', 'index');
-        }
-        $res = $this->db->destray(input('post.id'));
-        if($res)
+        }elseif(request()->isPost() && input('post.id'))
         {
-            $this->success($res['msg'],'index');
-        }else{
-            $this->error($res['msg']);
+            $res = $this->db->destray(input('post.id'));
+            if ($res) {
+                $this->success($res['msg'], 'index');
+            } else {
+                $this->error($res['msg']);
+            }
         }
     }
 }
