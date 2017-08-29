@@ -114,14 +114,14 @@ $i = 1;
  *
  * @global string $cfg['Servers'][$i]['host']
  */
-$cfg['Servers'][$i]['host'] = $_ENV['MYSQL_HOST'];
+$cfg['Servers'][$i]['host'] = 'localhost';
 
 /**
  * MySQL port - leave blank for default port
  *
  * @global string $cfg['Servers'][$i]['port']
  */
-$cfg['Servers'][$i]['port'] = $_ENV['MYSQL_PORT'];
+$cfg['Servers'][$i]['port'] = '';
 
 /**
  * Path to the socket - leave blank for default socket
@@ -245,14 +245,14 @@ $cfg['Servers'][$i]['auth_http_realm'] = '';
  *
  * @global string $cfg['Servers'][$i]['user']
  */
-$cfg['Servers'][$i]['user'] = $_ENV['MYSQL_USERNAME'];
+$cfg['Servers'][$i]['user'] = 'root';
 
 /**
  * MySQL password (only needed with 'config' auth_type)
  *
  * @global string $cfg['Servers'][$i]['password']
  */
-$cfg['Servers'][$i]['password'] = $_ENV['MYSQL_PASSWORD'];
+$cfg['Servers'][$i]['password'] = '';
 
 /**
  * Session to use for 'signon' authentication method
