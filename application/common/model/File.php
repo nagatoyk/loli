@@ -48,9 +48,7 @@ class File extends Model
     public function destray($id)
     {
         $info = $this->where('id', $id)->find();
-        dump($info);
-        exit();
-        /*define('FILE_PATH', ROOT_PATH.'public'.$info->path);
+        define('FILE_PATH', ROOT_PATH.'public'.$info->path);
         file_exists(FILE_PATH) && unlink(FILE_PATH);
         $res = $this->where('id', $id)->delete();
         if($res)
@@ -58,7 +56,7 @@ class File extends Model
             return ['valid'=>1, 'msg'=>'删除成功'];
         }else{
             return ['valid'=>0, 'msg'=>$this->getError()];
-        }*/
+        }
 
     }
 }

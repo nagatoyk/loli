@@ -27,11 +27,11 @@ class File extends Common
         }
     }
     public function del(){
-        // if(request()->isPost())
-        // {
-        //     file_exists(ROOT_PATH.'public'.input('post.path')) && unlink(ROOT_PATH.'public'.input('post.path'));
-        //     $this->success('删除成功!', 'index');
-        // }
+        if(request()->isPost() && input('post.path'))
+        {
+            file_exists(ROOT_PATH.'public'.input('post.path')) && unlink(ROOT_PATH.'public'.input('post.path'));
+            $this->success('删除成功!', 'index');
+        }
         $res = $this->db->destray(input('post.id'));
         if($res)
         {
