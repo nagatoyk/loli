@@ -26,7 +26,8 @@ class File extends Common
             return json_encode(['success'=>0, 'message'=>$res['msg']]);
         }
     }
-    public function del(){
+    public function del()
+    {
         if(request()->isPost() && input('post.path'))
         {
             file_exists(ROOT_PATH.'public'.input('post.path')) && unlink(ROOT_PATH.'public'.input('post.path'));
@@ -34,9 +35,10 @@ class File extends Common
         }elseif(request()->isPost() && input('post.id'))
         {
             $res = $this->db->destray(input('post.id'));
-            if ($res) {
+            if($res)
+            {
                 $this->success($res['msg'], 'index');
-            } else {
+            }else{
                 $this->error($res['msg']);
             }
         }
