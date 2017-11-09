@@ -53,7 +53,7 @@ class User extends Model
 	    if(!$validate->check($data)){
 	        return ['valid'=>0, 'msg'=>$validate->getError()];
         }
-        $info = $this->where('id',session('admin.user_id'))->where('password',md5(strtolower($data['admin_password'])))->find();
+        $info = $this->where('id',session('admin.user_id'))->where('password', md5(strtolower($data['admin_password'])))->find();
         if(!$info)
         {
             return ['valid'=>0, 'msg'=>'原始密码不正确'];
