@@ -9,6 +9,7 @@
 require 'DB_driver.php';
 
 $db_driver = 'PDO';//当前可选driver:Mysql,PDO;
+echo defined('MYSQL_HOST');
 if (defined('MYSQL_HOST')) {
     $host = MYSQL_HOST;
     $port = MYSQL_PORT;
