@@ -1,5 +1,5 @@
 <?php
-require_once 'mysql.class.php';
+require_once './mysql.class.php';
 
 if (!empty($_POST)) {
     $st = strtotime($_POST['st'] . ' 00:00:00');
