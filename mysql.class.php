@@ -9,8 +9,7 @@
 require 'DB_driver.php';
 
 $db_driver = 'PDO';//当前可选driver:Mysql,PDO;
-echo getenv('MYSQL_HOST');
-if (getenv('MYSQL_HOST')) {
+if (!empty($_ENV['MYSQL_HOST'])) {
     $host = $_ENV['MYSQL_HOST'];
     $port = $_ENV['MYSQL_PORT'];
     $dbname = $_ENV['MYSQL_DATABASE'];
