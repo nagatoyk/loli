@@ -14,7 +14,7 @@ require_once './mysql.class.php';
 $sqlText = "INSERT INTO `tp_app` (`id`, `no`, `year`, `month`, `day`, `time`, `recTime`, `tjr`) VALUES
 (1, '13950088658', '2016', '03', '18', '下午 19:03:09', '1458300369', 0)";
 //$sql->runSql($sqlText);
-
+echo '<pre>' . print_r($sql, true) . '</pre>';
 $list = $sql->getLine('select * from tp_app');
 echo '<pre>' . print_r($list, true) . '</pre>';
 
