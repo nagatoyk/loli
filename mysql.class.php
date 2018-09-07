@@ -9,12 +9,12 @@
 require 'DB_driver.php';
 
 $db_driver = 'Mysql';//当前可选driver:Mysql,PDO;
-if (!empty($_ENV['MYSQL_HOST'])) {
-    $host = $_ENV['MYSQL_HOST'];
-    $port = $_ENV['MYSQL_PORT'];
-    $dbname = $_ENV['MYSQL_DATABASE'];
-    $user = $_ENV['MYSQL_USERNAME'];
-    $pwd = $_ENV['MYSQL_PASSWORD'];
+if (!empty($_ENV['MYSQL_SERVICE_HOST'])) {
+    $host = $_ENV['MYSQL_SERVICE_HOST'];
+    $port = $_ENV['MYSQL_SERVICE_PORT'];
+    $dbname = 'sampledb';
+    $user = 'shose';
+    $pwd = 'xgf520';
 } else {
     $host = 'localhost';
     $port = 3306;
