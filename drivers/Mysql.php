@@ -8,7 +8,7 @@
 
 class DB_Mysql implements DB_driver
 {
-    private $db='';
+    private $db = '';
     private $host;
     private $user;
     private $pwd;
@@ -24,9 +24,9 @@ class DB_Mysql implements DB_driver
     }
 
     public function connect(){
-        $db=mysqli_connect($this->host.':'.$this->port,$this->user,$this->pwd,true);
-        mysql_select_db($this->dbname,$db);
-        mysql_set_charset('utf8',$db);
+        $db=mysqli_connect($this->host . ':' . $this->port, $this->user, $this->pwd, true);
+        mysql_select_db($this->dbname, $db);
+        mysql_set_charset('utf8', $db);
         return $db;
     }
 
