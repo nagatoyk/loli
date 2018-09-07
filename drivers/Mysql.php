@@ -26,9 +26,10 @@ class DB_Mysql implements DB_driver
 
     public function connect()
     {
-        $db = mysqli_connect($this->host . ':' . $this->port, $this->user, $this->pwd, true);
-        mysql_select_db($this->dbname, $db);
-        mysql_set_charset('utf8', $db);
+//        $db = mysqli_connect($this->host . ':' . $this->port, $this->user, $this->pwd, true);
+        $db = mysqli_connect($this->host, $this->user, $this->pwd, $this->dbname, $this->port);
+        mysqli_select_db($this->dbname, $db);
+        mysqli_set_charset('utf8', $db);
         return $db;
     }
 
