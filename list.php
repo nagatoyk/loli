@@ -8,4 +8,4 @@ if (!empty($_POST)) {
     // $count = $sql->getVar('select count(*) as cnt from app where recTime >= "'.$st.'" and recTime <= "'.$et.'"');
     // print_r($count);
 }
-echo '<pre>'.print_r($sql, true).'</pre>';
+echo '<pre>' . print_r($sql, true) . '</pre>';
