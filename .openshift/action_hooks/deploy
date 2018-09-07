@@ -9,9 +9,9 @@ if [ ! -d ${OPENSHIFT_DATA_DIR}attachment ]; then
     mkdir ${OPENSHIFT_DATA_DIR}attachment
 fi
 
-if [ ! -d ${OPENSHIFT_DATA_DIR}cache ]; then
-    mkdir ${OPENSHIFT_DATA_DIR}cache
-fi
+# if [ ! -d ${OPENSHIFT_DATA_DIR}cache ]; then
+#    mkdir ${OPENSHIFT_DATA_DIR}cache
+# fi
 
 # if [ -f ${OPENSHIFT_DATA_DIR}attachment/20170609/2327c85eb2892ee09c124580910f5b04.jpg ]; then
 #	rm ${OPENSHIFT_DATA_DIR}attachment/20170609/2327c85eb2892ee09c124580910f5b04.jpg
