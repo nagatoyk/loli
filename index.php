@@ -5,3 +5,4 @@ echo '<pre>' . print_r($list, true) . '</pre>';
 echo '<pre>' . print_r($_SERVER, true) . '</pre>';
 
 echo '<pre>' . print_r($_ENV, true) . '</pre>';
+phpinfo();
