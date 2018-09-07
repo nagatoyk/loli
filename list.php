@@ -11,7 +11,7 @@ $sqlText = "CREATE TABLE IF NOT EXISTS `tp_app` (
   `tjr` int(2) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;";
-$sql->runSql($sqlText);
+//$sql->runSql($sqlText);
 
 $list = $sql->getData('select * from tp_app');
 echo '<pre>' . print_r($list, true) . '</pre>';
