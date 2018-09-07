@@ -65,10 +65,10 @@ class DB_Mysql implements DB_driver
         if (is_bool($result))
             return $result;
         if ($type == 1)
-            while ($a = mysqli_fetch_array($result, MYSQLI_NUM))
+            while ($a = mysqli_fetch_array($result, MYSQLI_ASSOC))
                 $data[] = $a;
         elseif ($type == 2)
-            while ($a = mysqli_fetch_row($result))
+            while ($a = mysqli_fetch_row($result, MYSQLI_NUM))
                 $data[] = $a;
 
         mysqli_free_result($result);
