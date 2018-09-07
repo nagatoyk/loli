@@ -15,7 +15,7 @@ class DB_PDO implements DB_driver
     private $pwd;
     private $dbname;
 
-    public function __construct($host, $user, $pwd, $dbname, $port = 3306)
+    public function __construct($host, $port = 3306, $user, $pwd, $dbname)
     {
         $this->host = $host;
         $this->port = $port;
