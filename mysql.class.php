@@ -8,7 +8,7 @@
 
 require 'DB_driver.php';
 
-$db_driver = 'Mysql';//当前可选driver:Mysql,PDO;
+$db_driver = 'PDO';//当前可选driver:Mysql,PDO;
 if (!empty($_ENV['MYSQL_SERVICE_HOST'])) {
     $host = $_ENV['MYSQL_SERVICE_HOST'];
     $port = 3306;
