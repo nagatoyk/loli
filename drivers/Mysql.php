@@ -41,7 +41,7 @@ class DB_Mysql implements DB_driver
     public function closeDb()
     {
         if (isset($this->db))
-            @mysql_close($this->db);
+            @mysqli_close($this->db);
     }
 
     /*运行Sql语句,不返回结果集*/
@@ -49,7 +49,7 @@ class DB_Mysql implements DB_driver
     {
         $db = $this->db();
 
-        $result = mysql_query($sql, $db);
+        $result = mysqli_query($db, $sql);
         $this->save_error($db);
         return $result;
     }
@@ -60,18 +60,18 @@ class DB_Mysql implements DB_driver
         $data = Array();
         $db = $this->db();
 
-        $result = mysql_query($sql, $db);
+        $result = mysqli_query($db, $sql);
         $this->save_error($db);
         if (is_bool($result))
             return $result;
         if ($type == 1)
-            while ($a = mysql_fetch_array($result, MYSQL_ASSOC))
+            while ($a = mysqli_fetch_array($result, MYSQL_ASSOC))
                 $data[] = $a;
         elseif ($type == 2)
-            while ($a = mysql_fetch_row($result))
+            while ($a = mysqli_fetch_row($result))
                 $data[] = $a;
 
-        mysql_free_result($result);
+        mysqli_free_result($result);
         if ($data)
             return $data;
         else
@@ -116,7 +116,7 @@ class DB_Mysql implements DB_driver
      */
     public function affectedRows()
     {
-        return mysql_affected_rows($this->db());
+        return mysqli_affected_rows($this->db());
     }
 
     /**
@@ -126,7 +126,7 @@ class DB_Mysql implements DB_driver
      */
     public function lastId()
     {
-        return mysql_insert_id($this->db());
+        return mysqli_insert_id($this->db());
     }
 
 
@@ -164,14 +164,14 @@ class DB_Mysql implements DB_driver
 
     private function db()
     {
-        if (!isset($this->db) || !mysql_ping($this->db))
+        if (!isset($this->db) || !mysqli_ping($this->db))
             $this->db = $this->connect();
         return $this->db;
     }
 
     private function save_error($db)
     {
-        $this->error = mysql_error($db);
-        $this->errno = mysql_errno($db);
+        $this->error = mysqli_error($db);
+        $this->errno = mysqli_errno($db);
     }
 }
