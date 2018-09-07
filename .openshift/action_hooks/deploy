@@ -5,9 +5,9 @@
 # up again.  This script gets executed directly, so it could be python, php,
 # ruby, etc.
 
-if [ ! -d ${OPENSHIFT_DATA_DIR}attachment ]; then
-    mkdir ${OPENSHIFT_DATA_DIR}attachment
-fi
+#if [ ! -d ${OPENSHIFT_DATA_DIR}attachment ]; then
+#    mkdir ${OPENSHIFT_DATA_DIR}attachment
+#fi
 
 # if [ ! -d ${OPENSHIFT_DATA_DIR}cache ]; then
 #    mkdir ${OPENSHIFT_DATA_DIR}cache
